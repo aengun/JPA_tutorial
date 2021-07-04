@@ -16,7 +16,7 @@ public class Member {
 //    private Long teamId;
 
     @ManyToOne
-    @JoinColumn(name="TEAM_ID")
+    @JoinColumn(name = "TEAM_ID")
     private Team team;
 
     public Long getId() {
@@ -42,4 +42,10 @@ public class Member {
     public void setTeam(Team team) {
         this.team = team;
     }
+
+    public void changeTeam(Team team) {
+        this.team = team;
+        team.getMembers().add(this);
+    }
+
 }
