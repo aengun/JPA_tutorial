@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf9408f4-3ea9-421a-b5c6-894af0d64931" name="Default Changelist" comment="일대다">
-      <change afterPath="$PROJECT_DIR$/ex5-Member-Locker/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex5-Member-Locker/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex5-Member-Locker/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex5-Member-Locker/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex5-Member-Locker/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex5-Member-Locker/pom.xml" afterDir="false" />
+    <list default="true" id="bf9408f4-3ea9-421a-b5c6-894af0d64931" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ex7-Delivery/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex7-Delivery/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex7-Delivery/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex7-Delivery/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex7-Delivery/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex7-Delivery/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/java/hellojpa/JpaMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/java/hellojpa/Locker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/java/hellojpa/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/java/hellojpa/MemberProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/java/hellojpa/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/java/hellojpa/RoleType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/java/hellojpa/Team.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
