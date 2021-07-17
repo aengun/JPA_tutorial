@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf9408f4-3ea9-421a-b5c6-894af0d64931" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ex7-Delivery/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex7-Delivery/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex7-Delivery/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex7-Delivery/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex7-Delivery/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex7-Delivery/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/java/hellojpa/JpaMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/java/hellojpa/Locker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/java/hellojpa/Member.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/java/hellojpa/MemberProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/java/hellojpa/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/java/hellojpa/RoleType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/java/hellojpa/Team.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex7-Delivery/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bf9408f4-3ea9-421a-b5c6-894af0d64931" name="Default Changelist" comment="proxy" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +19,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
@@ -45,6 +32,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625327708525</updated>
+      <workItem from="1626532573143" duration="36000" />
     </task>
     <task id="LOCAL-00001" summary="일대다">
       <created>1625413039209</created>
@@ -53,8 +41,18 @@
       <option name="project" value="LOCAL" />
       <updated>1625413039209</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="proxy">
+      <created>1626532599179</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1626532599179</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -70,6 +68,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="일대다" />
-    <option name="LAST_COMMIT_MESSAGE" value="일대다" />
+    <MESSAGE value="proxy" />
+    <option name="LAST_COMMIT_MESSAGE" value="proxy" />
   </component>
 </project>
