@@ -10,10 +10,10 @@ public class Team {
     @Id @GeneratedValue
     @Column(name="TEAM_ID")
     private Long id;
+
     private String name;
 
-    @OneToMany
-    @JoinColumn(name="MEMBER_ID")
+    @OneToMany(mappedBy = "team", cascade = CascadeType.PERSIST)
     private List<Member> members = new ArrayList<>();
 
     public Long getId() {
