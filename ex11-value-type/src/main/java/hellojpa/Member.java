@@ -1,6 +1,10 @@
 package hellojpa;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Member {
@@ -17,30 +21,26 @@ public class Member {
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
-    // 기간
-//    private LocalDateTime startDate;
-//    private LocalDateTime endDate;
-    @Embedded
-    private Period workPeriod;
-
-    // 주소
-//    private String city;
-//    private String street;
-//    private String zipcode;
     @Embedded
     private Address homeAddress;
 
-    // Address 중복 사용하는 경우
-//    @Embedded
-//    @AttributeOverrides({
-//            @AttributeOverride(name = "city",
-//                    column = @Column(name = "work_city")),
-//            @AttributeOverride(name = "street",
-//                    column = @Column(name = "work_street")),
-//            @AttributeOverride(name = "zipcode",
-//                    column = @Column(name = "work_zipcode"))
-//    })
-//    private Address workAddress;
+    @ElementCollection
+    @CollectionTable(name = "FAVORITE_FOOD", joinColumns =
+    @JoinColumn(name = "MEMBER_ID")
+    )
+    @Column(name = "FOOD_NAME")
+    private Set<String> favoriteFoods = new HashSet<>();
+
+//    @ElementCollection
+//    @CollectionTable(name = "ADDRESS", joinColumns =
+//    @JoinColumn(name = "MEMBER_ID")
+//    )
+//    private List<Address> addressHistory = new ArrayList<>();
+
+    // 값타입 컬렉션 대안
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name="MEMBER_ID")
+    private List<AddressEntity> addressHistory = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -66,19 +66,36 @@ public class Member {
         this.team = team;
     }
 
-    public Period getWorkPeriod() {
-        return workPeriod;
-    }
-
-    public void setWorkPeriod(Period workPeriod) {
-        this.workPeriod = workPeriod;
-    }
-
     public Address getHomeAddress() {
         return homeAddress;
     }
 
     public void setHomeAddress(Address homeAddress) {
         this.homeAddress = homeAddress;
+    }
+
+    public Set<String> getFavoriteFoods() {
+        return favoriteFoods;
+    }
+
+    public void setFavoriteFoods(Set<String> favoriteFoods) {
+        this.favoriteFoods = favoriteFoods;
+    }
+
+//    public List<Address> getAddressHistory() {
+//        return addressHistory;
+//    }
+//
+//    public void setAddressHistory(List<Address> addressHistory) {
+//        this.addressHistory = addressHistory;
+//    }
+
+
+    public List<AddressEntity> getAddressHistory() {
+        return addressHistory;
+    }
+
+    public void setAddressHistory(List<AddressEntity> addressHistory) {
+        this.addressHistory = addressHistory;
     }
 }

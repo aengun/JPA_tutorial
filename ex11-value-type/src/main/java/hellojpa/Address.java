@@ -31,17 +31,17 @@ public class Address {
         return zipcode;
     }
 //set을 막음
-//    public void setCity(String city) {
-//        this.city = city;
-//    }
-//
-//    public void setStreet(String street) {
-//        this.street = street;
-//    }
-//
-//    public void setZipcode(String zipcode) {
-//        this.zipcode = zipcode;
-//    }
+    private void setCity(String city) {
+        this.city = city;
+    }
+
+    private void setStreet(String street) {
+        this.street = street;
+    }
+
+    private void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
+    }
 
     // ================================================
 
