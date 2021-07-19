@@ -1,46 +1,21 @@
 package hellojpa;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 @Entity
 public class Member {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "MEMBER_ID")
+    @Id @GeneratedValue
     private Long id;
-
-    @Column(name = "USERNAME")
     private String username;
+    private int age;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
-    @Embedded
-    private Address homeAddress;
-
-    @ElementCollection
-    @CollectionTable(name = "FAVORITE_FOOD", joinColumns =
-    @JoinColumn(name = "MEMBER_ID")
-    )
-    @Column(name = "FOOD_NAME")
-    private Set<String> favoriteFoods = new HashSet<>();
-
-//    @ElementCollection
-//    @CollectionTable(name = "ADDRESS", joinColumns =
-//    @JoinColumn(name = "MEMBER_ID")
-//    )
-//    private List<Address> addressHistory = new ArrayList<>();
-
-    // 값타입 컬렉션 대안
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name="MEMBER_ID")
-    private List<AddressEntity> addressHistory = new ArrayList<>();
+    @Enumerated(EnumType.STRING)
+    private MemberType type;
 
     public Long getId() {
         return id;
@@ -54,8 +29,24 @@ public class Member {
         return username;
     }
 
+    public MemberType getType() {
+        return type;
+    }
+
+    public void setType(MemberType type) {
+        this.type = type;
+    }
+
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public Team getTeam() {
@@ -66,36 +57,19 @@ public class Member {
         this.team = team;
     }
 
-    public Address getHomeAddress() {
-        return homeAddress;
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", age=" + age +
+//                ", team=" + team +
+                '}';
     }
 
-    public void setHomeAddress(Address homeAddress) {
-        this.homeAddress = homeAddress;
-    }
-
-    public Set<String> getFavoriteFoods() {
-        return favoriteFoods;
-    }
-
-    public void setFavoriteFoods(Set<String> favoriteFoods) {
-        this.favoriteFoods = favoriteFoods;
-    }
-
-//    public List<Address> getAddressHistory() {
-//        return addressHistory;
-//    }
-//
-//    public void setAddressHistory(List<Address> addressHistory) {
-//        this.addressHistory = addressHistory;
-//    }
-
-
-    public List<AddressEntity> getAddressHistory() {
-        return addressHistory;
-    }
-
-    public void setAddressHistory(List<AddressEntity> addressHistory) {
-        this.addressHistory = addressHistory;
+    //연관관계 편의 메서드
+    public void changeTeam(Team team){
+        this.team = team;
+        team.getMembers().add(this);
     }
 }

@@ -1,7 +1,6 @@
 package hellojpa;
 
 import javax.persistence.Embeddable;
-import java.util.Objects;
 
 @Embeddable
 public class Address {
@@ -10,53 +9,28 @@ public class Address {
     private String street;
     private String zipcode;
 
-    public Address() {
-    }
-
-    public Address(String city, String street, String zipcode) {
-        this.city = city;
-        this.street = street;
-        this.zipcode = zipcode;
-    }
-
     public String getCity() {
         return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getStreet() {
         return street;
     }
 
-    public String getZipcode() {
-        return zipcode;
-    }
-//set을 막음
-    private void setCity(String city) {
-        this.city = city;
-    }
-
-    private void setStreet(String street) {
+    public void setStreet(String street) {
         this.street = street;
     }
 
-    private void setZipcode(String zipcode) {
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
-    }
-
-    // ================================================
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Address address = (Address) o;
-        return Objects.equals(city, address.city) && Objects.equals(street, address.street) && Objects.equals(zipcode, address.zipcode);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(city, street, zipcode);
     }
 
 }
