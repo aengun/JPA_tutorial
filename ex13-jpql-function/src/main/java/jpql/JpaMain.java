@@ -18,25 +18,7 @@ public class JpaMain {
         tx.begin();
 
         try {
-            //==============================================================
-            // 케이스문
-            Team team = new Team();
-            team.setName("teamA");
-            em.persist(team);
 
-            Member member = new Member();
-            member.setUsername("관리자");
-            member.setAge(10);
-            member.setType(MemberType.ADMIN);
-            em.persist(member);
-            member.setTeam(team);
-
-            Member member2 = new Member();
-            member2.setUsername("관리자2");
-            em.persist(member2);
-
-            em.flush();
-            em.clear();
 
 
             tx.commit();
