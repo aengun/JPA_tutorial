@@ -236,14 +236,96 @@ public class JpaMain {
             //==============================================================
             // 서브쿼리 >> 말로만 설명
 
+//            //==============================================================
+//            // 타입 표현
+//            Team team =  new Team();
+//            team.setName("teamA");
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setUsername("member1");
+//            member.setAge(10);
+//            member.setType(MemberType.ADMIN);
+//
+//            member.setTeam(team);
+//
+//            em.persist(member);
+//
+//            em.flush();
+//            em.clear();
+//
+//            String query = "select m.username, 'HELLO', TRUE from Member m "
+//                    +"where m.type = hellojpa.MemberType.ADMIN"; // enum은 패키지명까지 다 써야함
+//            List<Object[]> resultList = em.createQuery(query)
+//                    .getResultList();
+//
+//            for(Object[] objects : resultList){
+//                System.out.println(objects[0]);
+//                System.out.println(objects[1]);
+//                System.out.println(objects[2]);
+//            }
+
+//            //==============================================================
+//            // 케이스문
+//            Team team = new Team();
+//            team.setName("teamA");
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setUsername("member1");
+//            member.setAge(10);
+//            member.setType(MemberType.ADMIN);
+//
+//            member.setTeam(team);
+//
+//            em.persist(member);
+//
+//            em.flush();
+//            em.clear();
+//
+//            String query =
+//                    "select " +
+//                            "case when m.age <= 10 then '학생요금' " +
+//                            " when m.age >= 60 then '경로요금' " +
+//                            " else '일반요금' end " +
+//                            "from Member m";
+//            List<String> resultList = em.createQuery(query, String.class)
+//                    .getResultList();
+//            for (String s : resultList) {
+//                System.out.println("s = " + s);
+//            }
+
+//            //==============================================================
+//            // 케이스문
+//            Team team = new Team();
+//            team.setName("teamA");
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setAge(10);
+//            member.setType(MemberType.ADMIN);
+//
+//            member.setTeam(team);
+//
+//            em.persist(member);
+//
+//            em.flush();
+//            em.clear();
+//
+//            String query = "select coalesce(m.username, '이름 없는 회원') from Member m";
+//            List<String> resultList = em.createQuery(query, String.class)
+//                    .getResultList();
+//            for (String s : resultList) {
+//                System.out.println("s = " + s);
+//            }
+
             //==============================================================
-            // 타입 표현
-            Team team =  new Team();
+            // 케이스문
+            Team team = new Team();
             team.setName("teamA");
             em.persist(team);
 
             Member member = new Member();
-            member.setUsername("member1");
             member.setAge(10);
             member.setType(MemberType.ADMIN);
 
@@ -254,15 +336,11 @@ public class JpaMain {
             em.flush();
             em.clear();
 
-            String query = "select m.username, 'HELLO', TRUE from Member m "
-                    +"where m.type = hellojpa.MemberType.ADMIN"; // enum은 패키지명까지 다 써야함
-            List<Object[]> resultList = em.createQuery(query)
+            String query = "select nullif(m.username, '관리자') from Member m";
+            List<String> resultList = em.createQuery(query, String.class)
                     .getResultList();
-
-            for(Object[] objects : resultList){
-                System.out.println(objects[0]);
-                System.out.println(objects[1]);
-                System.out.println(objects[2]);
+            for (String s : resultList) {
+                System.out.println("s = " + s);
             }
 
             tx.commit();
