@@ -3,9 +3,14 @@ package jpql;
 import javax.persistence.*;
 
 @Entity
+@NamedQuery(
+        name = "Member.findByUsername",
+        query = "select m from Member m where m.username = :username"
+)
 public class Member {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
     private String username;
     private int age;
@@ -68,7 +73,7 @@ public class Member {
     }
 
     //연관관계 편의 메서드
-    public void changeTeam(Team team){
+    public void changeTeam(Team team) {
         this.team = team;
         team.getMembers().add(this);
     }
